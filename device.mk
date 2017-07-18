@@ -48,6 +48,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level-0.xml \
+    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version-1_0_3.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -96,32 +98,23 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
-# Gello
+# GPS
 PRODUCT_PACKAGES += \
-    Gello
+    libgnsspps \
+    gps.msm8953
 
 # Init scripts
-PRODUCT_PACKAGES += \
-    init.qcom.sh \
-    init.qcom.bt.sh
-
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.qcom.usb.rc \
-    init.qcom.rc \
-    ueventd.qcom.rc
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,${LOCAL_PATH}/rootdir/etc,root)
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
-
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8916
-
-# Lights
-PRODUCT_PACKAGES += \
-    lights.msm8916
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/keylayout/ft5x06_ts.kl:system/usr/keylayout/ft5x06_ts.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsx_i2c.kl:system/usr/keylayout/synaptics_dsx_i2c.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_dsxv26.kl:system/usr/keylayout/synaptics_dsxv26.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -173,7 +166,7 @@ PRODUCT_PACKAGES += \
 
 # Sensor
 PRODUCT_COPY_FILES += \
-  $(LOCAL_PATH)/configs/calmodule.cfg:system/vendor/etc/calmodule.cfg
+    $(LOCAL_PATH)/configs/hals.conf:system/etc/sensors/hals.conf
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -188,5 +181,4 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    kernel/lenovo/p1a42/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/lenovo/p1a42/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    kernel/lenovo/p2/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat
