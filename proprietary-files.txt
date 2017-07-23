@@ -1035,4 +1035,3 @@ etc/wifi/WCNSS_qcom_cfg.ini
 etc/wifi/fstman.ini
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv_lenovo.bin
 etc/firmware/wlan/prima/WCNSS_wlan_dictionary_lenovo.dat
-
