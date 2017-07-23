@@ -17,7 +17,7 @@
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -61,7 +61,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
-    audio.primary.msm8916 \
+    audio.primary.msm8953 \
     audio.r_submix.default \
     audio.usb.default \
     libqcompostprocbundle \
@@ -79,11 +79,11 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8916 \
-    gralloc.msm8916 \
-    hwcomposer.msm8916 \
+    copybit.msm8953 \
+    gralloc.msm8953 \
+    hwcomposer.msm8953 \
     libtinyxml \
-    memtrack.msm8916
+    memtrack.msm8953
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -152,7 +152,7 @@ PRODUCT_PACKAGES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.msm8916
+    power.msm8953
 
 # IRSC
 PRODUCT_COPY_FILES += \
