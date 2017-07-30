@@ -85,9 +85,19 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8953
 
-# Doze
+# Display Calibration
 PRODUCT_PACKAGES += \
-    DeviceSettings
+    libjni_livedisplay
+
+# DRM
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite
+
+# Ebtables
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
