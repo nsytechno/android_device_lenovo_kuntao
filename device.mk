@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \
     copybit.msm8953 \
     gralloc.msm8953 \
     hwcomposer.msm8953 \
+    liboverlay \
     libtinyxml \
     memtrack.msm8953
 
@@ -111,6 +112,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     libgnsspps \
+    libcurl \
     gps.msm8953
 
 # Init scripts
@@ -141,22 +143,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml
 
-# Media
+# OMX
 PRODUCT_PACKAGES += \
-    libextmedia_jni \
+    libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
-
-ifneq ($(QCPATH),)
-PRODUCT_PACKAGES += \
-    libOmxVdecHevc
-endif
 
 # NFC
 PRODUCT_PACKAGES += \
