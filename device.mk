@@ -92,6 +92,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjni_livedisplay
 
+# DPM
+PRODUCT_BOOT_JARS += \
+    com.qti.dpmframework \
+    dpmapi \
+    tcmclient
+
 # DRM
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite
