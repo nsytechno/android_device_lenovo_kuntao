@@ -176,6 +176,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Recovery
 TARGET_RECOVERY_FSTAB := device/lenovo/p2/rootdir/etc/fstab.qcom
 
+# RIL
+TARGET_RIL_VARIANT := caf
+
 # SELinux
 BOARD_SEPOLICY_DIRS += device/lenovo/p2/sepolicy
 include device/qcom/sepolicy/sepolicy.mk
