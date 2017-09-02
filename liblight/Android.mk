@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit device configuration
-$(call inherit-product, device/lenovo/p1a42/full_p1a42.mk)
+LOCAL_PATH:= $(call my-dir)
+# HAL module implemenation stored in
+# hw/<COPYPIX_HARDWARE_MODULE_ID>.<ro.board.platform>.so
+include $(CLEAR_VARS)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+LOCAL_SRC_FILES := lights.c
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_CFLAGS := $(common_flags) -DLOG_TAG=\"qdlights\"
+LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE_TAGS := optional
 
-# Boot animation
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 1920
-
-## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := p1a42
-PRODUCT_NAME := lineage_p1a42
-PRODUCT_BRAND := Lenovo
-PRODUCT_MANUFACTURER := Lenovo
-PRODUCT_RELEASE_NAME := p1a42
+include $(BUILD_SHARED_LIBRARY)
