@@ -58,6 +58,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
+    audio.primary.msm8953 \
+    audio_amplifier.msm8953 \
     audio.usb.default \
     audio.r_submix.default \
     libaudio-resampler \
